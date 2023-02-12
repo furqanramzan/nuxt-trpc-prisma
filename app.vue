@@ -1,5 +1,9 @@
+<script setup>
+const { data: hello } = await useFetch("/api/hello");
+</script>
+
 <template>
   <div>
-    <NuxtWelcome />
+    <h1>{{ hello }}</h1>
   </div>
 </template>
