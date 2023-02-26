@@ -1,3 +1,6 @@
-export default defineEventHandler((event) => {
-  return "Welcome to Nuxt";
+import { User } from "server/models";
+
+export default defineEventHandler(async (event) => {
+  const users = await prisma.user.findMany();
+  return users;
 });
